@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/shopee/static/css/main.b285a624.css",
+    "main.js": "/shopee/static/js/main.33e3d1df.js",
+    "static/media/shopee.csv": "/shopee/static/media/shopee.6080e698d002ab726441.csv",
+    "static/media/banner_shopee_55.jpg": "/shopee/static/media/banner_shopee_55.cb0b96e947b29b02c911.jpg",
+    "static/media/banner_shopee_66.jpg": "/shopee/static/media/banner_shopee_66.a9bd8d91d4722ae713c0.jpg",
+    "static/media/img_01.jpg": "/shopee/static/media/img_01.d60473e8644ac3d7b9e8.jpg",
+    "static/media/img_02.jpg": "/shopee/static/media/img_02.d60473e8644ac3d7b9e8.jpg",
+    "static/media/img_03.jpg": "/shopee/static/media/img_03.d60473e8644ac3d7b9e8.jpg",
+    "static/media/img_04.jpg": "/shopee/static/media/img_04.d60473e8644ac3d7b9e8.jpg",
+    "static/media/ico_search.svg": "/shopee/static/media/ico_search.3de63c1a41828cf1f05e.svg",
+    "static/media/img_voucher.svg": "/shopee/static/media/img_voucher.b33d13689ec0bbcb46d6.svg",
+    "static/media/btn-arrow-next-slick.svg": "/shopee/static/media/btn-arrow-next-slick.e8a583917acf2d0008af.svg",
+    "static/media/btn-arrow-prev-slick.svg": "/shopee/static/media/btn-arrow-prev-slick.c1dcbcc3981c7a3ef8ac.svg",
+    "index.html": "/shopee/index.html",
+    "main.b285a624.css.map": "/shopee/static/css/main.b285a624.css.map",
+    "main.33e3d1df.js.map": "/shopee/static/js/main.33e3d1df.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b285a624.css",
+    "static/js/main.33e3d1df.js"
+  ]
+}
