@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/* sass */
+
+.banner-slider .slick-dots {
+    bottom: -20px;
+}
+
+.banner-slider .slick-dots li {
+    width: 8px;
+    height: 8px;
+    margin: 5px;
+}
+
+.banner-slider .slick-dots li.slick-active button {
+    background-color: #EE4D2D;
+}
+
+.banner-slider .slick-dots li button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid #EE4D2D;
+}
+
+.banner-slider .slick-dots li button:before {
+    display: none;
+}
+
+.banner-slider .slick-prev {
+    left: 8px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+
+.banner-slider .slick-prev:before {
+    content: "";
+    background-image: url(../image/btn-arrow-prev-slick.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1;
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.banner-slider .slick-next {
+    right: 8px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+
+.banner-slider .slick-next:before {
+    content: "";
+    background-image: url(../image/btn-arrow-next-slick.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1;
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+@media print,
+all and (min-width: 768px) {
+    .banner-slider .slick-dots {
+        bottom: -28px;
+    }
+    .banner-slider .slick-dots li {
+        width: 12px;
+        height: 12px;
+    }
+    .banner-slider .slick-dots li button {
+        width: 12px;
+        height: 12px;
+    }
+    .banner-slider .slick-prev {
+        width: 48px;
+        height: 48px;
+        left: 24px;
+    }
+    .banner-slider .slick-prev:before {
+        width: 48px;
+        height: 48px;
+    }
+    .banner-slider .slick-prev:hover {
+        opacity: 0.7;
+    }
+    .banner-slider .slick-next {
+        width: 48px;
+        height: 48px;
+        right: 24px;
+    }
+    .banner-slider .slick-next:before {
+        width: 48px;
+        height: 48px;
+    }
+    .banner-slider .slick-next:hover {
+        opacity: 0.7;
+    }
+}
