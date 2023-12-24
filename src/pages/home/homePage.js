@@ -10,12 +10,17 @@ const HomePage = () => {
   const [listItems, setListItems] = useState([]);
   const [dataShow, setDataShow] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(1);
-  const [isLoadding, setIsLoadding] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const headers = {
+    "Content-Type": "application/json",
+    "Authorization": "Token sUw5NLWDXaiV0MjXakNeYvFDrc_95MVM",
+  };
   const handlePaging = (page, pageSize) => {
     setCurrentIndex(page);
+    setIsLoading(true);
     const urls = []
-    const temp = listItems.splice(page - 1, pageSize)
-    temp.map(produce => {
+    const dataSearch = listItems.splice(page - 1, pageSize)
+    dataSearch.map(produce => {
       return !produce[2].includes('url') && urls.push(produce[2])
     })
     createShorten(urls)
@@ -33,11 +38,8 @@ const HomePage = () => {
           return listProduct.push(obj)
         })
         setDataShow(listProduct);
+        setIsLoading(false);
       });
-  };
-  const headers = {
-    "Content-Type": "application/json",
-    "Authorization": "Token sUw5NLWDXaiV0MjXakNeYvFDrc_95MVM",
   };
   const createShorten = (urls) => {
     // create tracking link
@@ -62,20 +64,27 @@ const HomePage = () => {
       })
   }
   const handleSearch = (e) => {
-    const data = listItems.filter(product => product[1] && product[1].includes(e.target.value))
-    setListItems(data)
-    convertLink(data)
+    setIsLoading(true)
+    if (e.target.value) {
+      const data = listItems.filter(product => product[1] && product[1].includes(e.target.value))
+      setListItems(data)
+      convertLink(data)
+      setIsLoading(false)
+    } else {
+      loadDataFromFile()
+      setIsLoading(false)
+    }
   }
   const convertLink = (data) => {
     const urls = []
-    const temp = data.splice(0, 20)
-    temp.map(produce => {
+    const dataSearch = data.splice(0, 20)
+    dataSearch.map(produce => {
       return !produce[2].includes('url') && urls.push(produce[2])
     })
     createShorten(urls)
       .then((response) => {
         let listProduct = []
-        temp.map((v, idx) => {
+        dataSearch.map((v, idx) => {
           let obj = {
             sku: v[0],
             name: v[1],
@@ -89,10 +98,10 @@ const HomePage = () => {
         setDataShow(listProduct);
       });
   }
-  useEffect(() => {
+  const loadDataFromFile = () => {
     readString(fileCSV, {
       complete: (results, file) => {
-        setIsLoadding(false);
+        setIsLoading(false);
         setListItems(results.data);
         convertLink(results.data)
       },
@@ -101,6 +110,9 @@ const HomePage = () => {
         console.log('error while parsing:', error, file);
       },
     });
+  }
+  useEffect(() => {
+    loadDataFromFile()
   }, [readString])
   return (
     <>
@@ -120,9 +132,8 @@ const HomePage = () => {
                 </div>
               </li>
             </ul>
-            {isLoadding && <Spin />}
             <Banner />
-            {dataShow && dataShow.length > 0 && (
+            {isLoading ? <Spin style={{display: 'flex', justifyContent: 'center', marginTop: 150, widthL: 200}} size="large" /> : (dataShow && dataShow.length > 0 && (
               <>
                 <ProductItem data={dataShow} />;
                 <div className="wrap-paging">
@@ -135,7 +146,7 @@ const HomePage = () => {
                   />
                 </div>
               </>
-            )}
+            ))}
           </div>
         </div>
       </main>
