@@ -40,7 +40,7 @@ const ProductItem = ({ data }) => {
                   </div>
                 </div>
               </a>
-            </li>;
+            </li>
           })}
       </ul>
     </section>
