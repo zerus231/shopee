@@ -1,8 +1,4 @@
 import React from "react";
-import Img01 from "../common/image/img_01.jpg";
-import Img02 from "../common/image/img_02.jpg";
-import Img03 from "../common/image/img_03.jpg";
-import Img04 from "../common/image/img_04.jpg";
 const ProductItem = ({ data }) => {
   return (
     <section className="wrap-sec">

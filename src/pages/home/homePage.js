@@ -13,7 +13,7 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const headers = {
     "Content-Type": "application/json",
-    "Authorization": "Token sUw5NLWDXaiV0MjXakNeYvFDrc_95MVM",
+    "Authorization": process.env.REACT_APP_AFFILIATE_TOKEN
   };
   const handlePaging = (page, pageSize) => {
     setCurrentIndex(page);
