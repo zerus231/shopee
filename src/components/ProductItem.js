@@ -1,4 +1,5 @@
 import React from "react";
+import { VND } from "../assets/utils";
 const ProductItem = ({ data }) => {
   return (
     <section className="wrap-sec">
@@ -30,8 +31,7 @@ const ProductItem = ({ data }) => {
                     </div>
                     <div className="sale">
                       <p className="price">
-                        {product?.price}
-                        <span>đ</span>
+                        {VND.format(product?.price)}
                       </p>
                       <p className="sold">
                         Đã bán <span>{product?.sold}</span>
@@ -40,7 +40,7 @@ const ProductItem = ({ data }) => {
                   </div>
                 </div>
               </a>
-            </li>
+            </li>;
           })}
       </ul>
     </section>

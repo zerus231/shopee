@@ -135,7 +135,7 @@ const HomePage = () => {
             <Banner />
             {isLoading ? <Spin style={{display: 'flex', justifyContent: 'center', marginTop: 150, widthL: 200}} size="large" /> : (dataShow && dataShow.length > 0 && (
               <>
-                <ProductItem data={dataShow} />;
+                <ProductItem data={dataShow} />
                 <div className="wrap-paging">
                   <Pagination
                     current={currentIndex}
